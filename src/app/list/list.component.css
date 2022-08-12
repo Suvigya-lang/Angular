@@ -1,0 +1,14 @@
+.text{
+    font-size: 100px;
+}
+.table{
+    margin-top: 100px;
+    width: 800px;
+    margin-right: 300px;
+    float: right;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}

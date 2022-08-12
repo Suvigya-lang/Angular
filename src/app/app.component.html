@@ -1,0 +1,94 @@
+<div class="content">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">My app</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li *ngFor="let men of menu" class="nav-item active">
+            <a class="nav-link" routerLink="{{men.url}}">{{men.name}}</a>
+          </li>
+
+          <li class="nav-item">
+            <button *ngIf="localStorageEmpty();else logout" button type="button" class="btn btn-primary"
+              (click)="openModal(template)">register</button>
+
+            <ng-template #logout>
+              <button button type="button" class="btn btn-primary" (click)="onLogout()">logout</button>
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Register user</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+
+        <label> Firstname </label>
+        <input type="text" name="firstname" size="15" /> <br> <br>
+        <label> Middlename: </label>
+        <input type="text" name="middlename" size="15" /> <br> <br>
+        <label> Lastname: </label>
+        <input type="text" name="lastname" size="15" /> <br> <br>
+
+        <label>
+          Course :
+        </label>
+        <select>
+          <option value="Course">Course</option>
+          <option value="BCA">BCA</option>
+          <option value="BBA">BBA</option>
+          <option value="B.Tech">B.Tech</option>
+          <option value="MBA">MBA</option>
+          <option value="MCA">MCA</option>
+          <option value="M.Tech">M.Tech</option>
+        </select>
+
+        <br>
+        <br>
+        <label>
+          Gender :
+        </label><br>
+        <input type="radio" name="male" /> Male <br>
+        <input type="radio" name="female" /> Female <br>
+        <input type="radio" name="other" /> Other
+        <br>
+        <br>
+
+        <label>
+          Phone :
+        </label>
+        <input type="text" name="country code" value="+91" size="2" />
+        <input type="text" name="phone" size="10" /> <br> <br>
+
+        Email:
+        <input type="email" id="email" name="email" /> <br>
+        <br> <br>
+        Password:
+        <input type="Password" id="pass" name="pass"> <br>
+        <br> <br>
+        Re-type password:
+        <input type="Password" id="repass" name="repass"> <br> <br>
+        <button type="button" class="btn btn-primary" (click)="onLogin()"> Submit</button>
+      </form>
+    </div>
+  </ng-template>
+
+
+
+  <div style="padding-top: 60px">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class = table>
+<table class= "table table-bordered" >
+    <tbody>
+      <tr>
+        <th style="text-align:center;">Id</th>
+        <th style="text-align:center;">Name</th>
+        <th style="text-align:center;">Price</th>     
+      </tr>
+  
+      <tr *ngFor="let product of products ">
+        <th style="text-align:center;"><a routerLink="/details/{{product.id}}">{{ product.id}}</a></th>
+        <td style="text-align: center;">{{ product.name}}</td>
+        <td style="text-align: center;">{{ product.price | currency : 'INR'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

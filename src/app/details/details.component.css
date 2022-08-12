@@ -1,0 +1,23 @@
+.card{
+    float: right;
+    margin-top: 200px;
+    margin-right: 200px;
+}
+.image{
+    float: left;
+    margin-top: 200px;
+    margin-left:400px;
+
+}
+img{
+  width: 300px;
+  height: 300px;  
+}
+.datepicker{
+    margin-top: 500px;
+    margin-left: 1350px;
+}
+.state{
+    margin-left:1350px;
+    width:200px;
+}
