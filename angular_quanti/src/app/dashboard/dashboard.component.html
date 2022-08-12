@@ -1,0 +1,87 @@
+<div class="heading">
+    <h3>My Retirement</h3>
+</div> 
+<div class="box">
+    <div class="row row-header">
+        <div class="col-6">
+        <h4> Manage</h4>
+    </div>
+    <div class="col-6">
+
+        <button type="button" class="btn btn-outline-secondary btn-sm enquiry" >Enquire history</button>
+        
+    </div>
+    </div>
+    <div class="hr">
+    <hr>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <ul class ="list">
+                <li>
+                    Creation Date: &nbsp;<span class="span-text">{{product.creationDate}}</span>
+                </li>
+    
+                <li>
+                    Change Account Number:&nbsp; <span class="span-text"> {{accNumber}}</span> 
+                    <i *ngIf="userAdmin()"class="fa fa-pencil accounticon"   (click)="openModal(template)" ></i>
+                </li>
+                <li>
+                    Charge Date: &nbsp;<span class="span-text">{{product.chargedDate}}</span><span class="subtext">(Next payment date)</span>
+                    <i *ngIf="userAdmin()"class="fa fa-pencil changeicon"   ></i>
+                    
+                </li>
+                <li>
+                    Status:&nbsp;<span class="span-text">{{product.status}}</span>
+                    <button *ngIf="userAdmin()" type="button" class="btn btn-outline-secondary btn-sm soi"  >Suspension of Investment</button>
+                </li>
+                </ul>
+        </div>
+        <div class="col-6">
+            <ul class="list">
+                <li>
+                    Investment Amount:&nbsp;<span class="twd">TWD&nbsp;</span> <span class="span-text"> {{product.investedAmount}}</span>
+                    <span class="subtext">(per month)</span>
+                    <button *ngIf="userAdmin()" type="button" class="btn btn-outline-secondary btn-sm adjust"  >Adjust Amount</button>
+                </li>
+    
+                <li>
+                    Accumalated investment amount :&nbsp; <span class="twd">TWD&nbsp;</span><span class="span-text">{{product.accumulatedAmount}}</span>
+                </li>
+                <li>
+                    Current market value:&nbsp; <span class="twd">TWD&nbsp;</span><span class="span-text">{{product.currentValue}}</span>
+                    <button  type="button" class="btn btn-outline-secondary btn-sm redemption">Redemption</button>
+                </li>
+                
+                </ul>
+        </div>
+    </div>
+</div>
+<div class="return"><button type="button" class="btn  bt-return" (click)="return()">Return</button></div>
+<ng-template #template>
+    <div class="modal-header">
+      <h5 class="modal-title pull-left">Change Account Number :</h5>
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </div>
+    <div class="modal-body">
+      <h6>Please select your debit account number:</h6>
+      <select class="form-select currselect" aria-label="Default select example">
+        <option selected>USD</option>
+        <option>INR</option>
+        <option>TWD</option>
+        <option>USD</option>
+      </select>
+     
+      <select [(ngModel)]="acNo" class="form-select acselect" aria-label="Default select example" >
+        <option selected>{{accNumber}}</option>
+        <option *ngFor="let acc of acNumber">{{acc}}</option>
+      </select>
+      <div class="mtext">Account Balance</div>
+    
+
+      <div class="confirm">
+        <button type="button" class="btn  btcancel" (click)="modalRef?.hide()">Cancel</button>
+        <button type="button" class="btn  btconfirm"(click)="changeAccount()">Confirm</button>
+        </div>
+    </div>
+  </ng-template>

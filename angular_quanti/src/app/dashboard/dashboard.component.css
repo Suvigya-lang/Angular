@@ -1,0 +1,105 @@
+.heading{
+    padding-top: 50px;
+    padding-left:50px;
+}
+li{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.box{
+    
+    background-color: white;
+   margin:50px;
+   padding:0 30px;
+}
+.span-text{
+    color: rgb(29, 104, 165);
+    font-size: 18px;
+}
+.return{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.enquiry{
+    float:right;
+    width:150px;
+    border-radius: 0;
+}
+.confirm{
+    margin-top:30px;
+    margin-left:100px;
+    margin-bottom: 50px;
+}
+.row-header{
+    padding: 30px;
+    padding-top:50px;
+    padding-bottom: 0px;
+}
+.accounticon{
+    float:right;
+     cursor: pointer;
+     color:rgb(29, 104, 165);
+
+}
+.changeicon{
+    float:right;
+    cursor:pointer;
+    color:rgb(29, 104, 165);
+}
+.twd{
+    font-size: 14px;color:grey;
+}
+.subtext{
+    font-size:12px;color:grey;
+}
+.soi{
+    width:200px;float:right; border-radius: 0;
+}
+.adjust{
+    width:150px;float: right;margin-right:30px;
+    border-radius: 0;
+}
+.redemption{
+    width:130px;float: right; margin-right:30px;
+    border-radius: 0;
+}
+.currselect{
+    width:100px; display:inline-block;border-radius: 0;
+}
+.acselect{
+    width:150px;display: inline-block;margin-left: 10px ;border-radius:0;
+}
+.mtext{
+    display: inline-block;
+    margin-left: 10px;
+}
+.btcancel{
+    width:120px;
+    background-color: rgb(223, 219, 219);
+    color: rgb(102, 99, 99);
+    border-radius: 0;
+}
+.btconfirm{
+    margin-left:5px;
+    width:120px;
+    background-color: #018f38;
+    color:white;
+    border-radius: 0;
+}
+.list{
+    list-style-type:none;
+}
+.hr{
+    padding-left:40px;
+    padding-right: 40px;
+}
+.bt-return{
+    width:120px;
+    height:50px;
+    color:white;
+    background-color: #018f38;
+    border-radius: 0;
+}
+
+
